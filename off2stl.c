@@ -226,14 +226,14 @@ int main(int argc, char *argv[])
 		normal = get_facet_normal(vertices[a], vertices[b],vertices[c]);
 		printf(" facet normal % .6e % .6e % .6e\n",
 						normal.x, normal.y, normal.z);
-		printf("   outer loop\n");
-		printf("     vertex  %.6e  %.6e  %.6e\n",
+		printf("  outer loop\n");
+		printf("   vertex  %.6e  %.6e  %.6e\n",
 				vertices[a].x, vertices[a].y, vertices[a].z);
-		printf("     vertex  %.6e  %.6e  %.6e\n",
+		printf("   vertex  %.6e  %.6e  %.6e\n",
 				vertices[b].x, vertices[b].y, vertices[b].z);
-		printf("     vertex  %.6e  %.6e  %.6e\n",
+		printf("   vertex  %.6e  %.6e  %.6e\n",
 				vertices[c].x, vertices[c].y, vertices[c].z);
-		printf("   endloop\n");
+		printf("  endloop\n");
 		printf(" endfacet\n");
 	}
 
