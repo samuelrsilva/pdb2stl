@@ -6,6 +6,8 @@ pdb2stl is a collection of programs to calculate a representation of molecular s
 If it is described in PDB, it can be printed!
 
 
+![](img1.jpg) ![](img2.jpg)
+
 Basic pipeline is as follows:
 
 **PDB** (input)
@@ -108,3 +110,5 @@ and
 	address = {San Francisco}
 }
 ```
+
+Thanks to [Laure Stelmastchuk](https://www.3dhubs.com/s%C3%A3o-carlos/hubs/laure-stelmastchuk) for suggesting the idea for this program.
