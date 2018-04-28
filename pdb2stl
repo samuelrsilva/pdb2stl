@@ -1,0 +1,57 @@
+#!/bin/bash
+#
+# pdb2stl
+#
+# Given a protein PDB, generate a STL file of the corresponding molecular
+# surface (Connolly).
+#
+#
+# Copyright Samuel Reghim Silva <samuelrsilva@gmail.com>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, version 3 of the License.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+if [ $# -lt 1 ]; then
+	echo Usage: $0 input.pdb [ percentage of faces to keep ]
+	exit 0
+fi
+
+NAME=$(basename $1 .pdb)
+echo name = $NAME
+
+# calculate molecular surface:
+if ! EDTSurf -i $1 -s 3 -h 2 ; then
+	echo Failed to generate molecular surface
+	exit 1
+fi
+
+if [ $# -eq 2 ]; then
+	# decimate
+	echo
+	echo "Decimating to $2% of faces"
+	decimate ${NAME}.off ${NAME}_dec.off $2
+	mv ${NAME}_dec.off ${NAME}.off
+fi
+
+
+# convert from OFF to STL
+if ! off2stl ${NAME}.off > ${NAME}.stl ; then
+	echo Failed to convert from OFF to STL
+	exit 1
+fi
+
+rm ${NAME}.off
+
+echo Done!
+echo output is ${NAME}.stl
+
+exit 0
