@@ -116,4 +116,4 @@ and
 }
 ```
 
-Thanks to [Laure Stelmastchuk](https://www.3dhubs.com/s%C3%A3o-carlos/hubs/laure-stelmastchuk) for suggesting the idea for this program.
+Thanks to [laurestk](https://github.com/laurestk) for suggesting the idea for this program.
