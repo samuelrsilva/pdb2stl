@@ -14,6 +14,8 @@ int main(int argc, char *argv[])
 
 	Eigen::MatrixXd U;
 	Eigen::MatrixXi G;
+	Eigen::VectorXi J;
+	Eigen::VectorXi I;
 
 	if (argc > 3) {
 		p = atoi(argv[3]);
@@ -28,7 +30,7 @@ int main(int argc, char *argv[])
 
 		nfaces = F.rows() * p / 100.0;
 
-		igl::decimate(V, F, nfaces, U, G);
+		igl::decimate(V, F, nfaces, U, G, J, I);
 		if (!igl::writeOFF(argv[2], U, G)) {
 			std::fprintf(stderr, "Failed to write %s\n", argv[2]);
 			return EXIT_FAILURE;

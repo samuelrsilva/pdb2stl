@@ -2,7 +2,7 @@ CC=gcc
 CXX=g++
 
 CFLAGS=-Wall -Wextra -O2 -std=c99
-CXXFLAGS=-Wall -Wextra -O2 -std=c++11
+CXXFLAGS=-Wall -Wextra -O2 -std=c++11 -pthread
 
 EIGEN_DIR=eigen
 LIBIGL_DIR=libigl/include

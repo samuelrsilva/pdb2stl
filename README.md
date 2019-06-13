@@ -76,6 +76,11 @@ pdb2stl input.pdb [ percentage of faces to keep ]
 
 `percentage of faces to keep` is an optional argument.
 
+For example, to keep 75% of faces:
+```
+pdb2stl input.pdb 75
+```
+
 ## License
 
 decimate.cc is released under [MPL2](http://www.mozilla.org/MPL/2.0/).
